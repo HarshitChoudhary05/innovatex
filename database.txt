@@ -1,0 +1,4 @@
+$servername = "localhost";
+$username = "u717041713_developer";
+$password = "391312&Iw22uitf";
+$dbname = "u717041713_student_db";

@@ -1,0 +1,74 @@
+-- Create the database (if it does not already exist)
+CREATE DATABASE IF NOT EXISTS school_db;
+USE school_db;
+
+-- Create the students table
+CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    erp_number VARCHAR(50) NOT NULL UNIQUE,
+    parent_name VARCHAR(100),
+    parent_phone VARCHAR(20),
+    section VARCHAR(10) NOT NULL
+);
+
+
+
+
+
+
+
+
+
+-- Create the users table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('CR', 'Mentor') NOT NULL,
+    section VARCHAR(10) NOT NULL
+);
+
+
+
+
+
+
+-- Create the attendance table
+CREATE TABLE IF NOT EXISTS attendance (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    status ENUM('Present', 'Absent', 'Leave') NOT NULL,
+    file VARCHAR(255),
+    FOREIGN KEY (student_id) REFERENCES students(id)
+);
+
+
+
+
+
+
+Insert Sample Data into students Table
+
+sql
+Copy code
+INSERT INTO students (name, erp_number, parent_name, parent_phone, section) VALUES
+('John Doe', 'ERP001', 'Jane Doe', '1234567890', 'a1'),
+('Alice Smith', 'ERP002', 'Robert Smith', '0987654321', 'a2'),
+('Bob Johnson', 'ERP003', 'Emily Johnson', '1122334455', 'b1');
+
+
+
+
+
+
+
+
+-- Insert CR and Mentor users
+INSERT INTO users (username, password, role, section) VALUES
+('cr_a1', PASSWORD('crpassword'), 'CR', 'a1'),
+('mentor_a1', PASSWORD('mentorpassword'), 'Mentor', 'a1'),
+('cr_b1', PASSWORD('crpassword'), 'CR', 'b1'),
+('mentor_b1', PASSWORD('mentorpassword'), 'Mentor', 'b1');
