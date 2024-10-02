@@ -1,0 +1,118 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background Styling */
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Dark gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #f0f0f0;
+}
+.tx1 {
+    color: black;
+}
+/* Container for the login box */
+.login-container {
+    background: rgba(50, 50, 70, 0.75); /* Dark glassmorphism effect */
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Title Styling */
+.login-container h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00f3ff; /* Neon blue text */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Form label styling */
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #d1d1e9; /* Light lavender text */
+}
+
+/* Select and input fields styling */
+input[type="text"], 
+input[type="password"], 
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #f0f0f0; /* Light text */
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.8); /* Neon glow */
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: #00f3ff; /* Neon blue */
+    color: #0f0c29;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: #00e6e6; /* Slightly brighter neon blue */
+    box-shadow: 0 0 12px #00f3ff; /* Neon hover effect */
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

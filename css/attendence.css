@@ -1,0 +1,162 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background Styling */
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Dark gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+/* Container for the attendance box */
+.attendance-container {
+    background: rgba(50, 50, 70, 0.75); /* Dark glassmorphism effect */
+    backdrop-filter: blur(12px);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Title Styling */
+.attendance-container h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00d4ff; /* Neon blue */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Form label styling */
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #d1d1e9; /* Soft lavender */
+}
+
+/* Select and input fields styling */
+select, input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, 
+select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.8); /* Neon glow */
+}
+
+/* Radio buttons styling */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label input[type="radio"] {
+    margin-bottom: 0.5rem;
+}
+
+label {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+/* File upload styling */
+#file-upload {
+    display: none;
+}
+
+input[type="file"] {
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: #f0f0f0;
+    padding: 0.75rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: #00d4ff; /* Neon blue */
+    color: #0f0c29;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: #00b3cc; /* Brighter neon blue */
+    box-shadow: 0 0 12px #00d4ff; /* Neon hover effect */
+}
+
+/* Link back to Dashboard */
+a {
+    margin-top: 1rem;
+    display: inline-block;
+    color: #00d4ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00b3cc; /* Hover effect */
+}
+
+/* Responsive design for mobile screens */
+@media (max-width: 768px) {
+    .attendance-container {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
